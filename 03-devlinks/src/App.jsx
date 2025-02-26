@@ -16,14 +16,17 @@ const App = () => {
   };
   return (
     <div id="App" className={isLight ? "light" : undefined}>
+      <div id="container">
       <Perfil fotoPerfil={isLight? FotoLight : FotoDark}> @JoaquimGuilherme </Perfil>
       <Switch troca={troca} isLight={isLight} />
+      <div id="links">
       <ul>
         <Links link={"https://github.com/Joaquimtxt"}>Github</Links>
         <Links link={"https://instagram.com/joaquimgsr"}>Instagram</Links>
         <Links link={"https://www.chess.com/member/pa1n-615"}>Xadrez</Links>
         <Links link={"https://steamcommunity.com//id/jocaquim"}>Steam</Links>
       </ul>
+      </div>
 
       <div id="socialLinks">
         <SocialLinks
@@ -41,7 +44,9 @@ const App = () => {
         <SocialLinks link={"https://linkedin.com"} icon={"logo-linkedin"} />
       </div>
       <Rodape>Joaquim</Rodape>
+      </div>
     </div>
+
   );
 };
 

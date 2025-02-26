@@ -3,7 +3,7 @@ li a {
     align-items: center;
     justify-content: center;
     padding: 14px 24px;
-    margin: 24px;
+    margin: 15px;
 
     border: 1px solid var(--stroke-color);
     border-radius: 8px;
@@ -20,31 +20,4 @@ li a {
 li a:hover {
     background: var(--surface-color-hover);
     border: 1px solid var(--text-color);
-}
-
-/*Responsividade*/
-
-@media only screen and (max-width: 480px) { /* Celulares menores */
-    li a {
-        margin: 24px 50px;
-    }
-}
-
-@media only screen and (min-width: 481px) and (max-width: 700px) { /* Celulares maiores */
-    li a {
-        margin: 24px 100px;
-    }
-}
-
-@media only screen and (min-width: 701px) and (max-width: 1024px) { /* Tablets */
-    li a {
-        margin: 24px 200px;
-    }
-}
-
-@media only screen and (min-width: 1025px) { /* Computadores */
-    li a {
-        margin: 24px 500px;
-    }
-    
 }
