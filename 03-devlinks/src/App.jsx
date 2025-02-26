@@ -1,5 +1,4 @@
 import "./App.css";
-import foto from "./img/spike.jpg";
 
 import Links from "../components/links/Links";
 import Perfil from "../components/Profile/perfil";
@@ -7,6 +6,8 @@ import Switch from "../components/switch/Switch";
 import SocialLinks from "../components/socialLinks/SocialLinks";
 import Rodape from "../components/rodape/Rodape";
 import { useState } from "react";
+import FotoLight from "./img/ryu.jpg";
+import FotoDark from "./img/spike.jpg";
 
 const App = () => {
   const [isLight, setIsLight] = useState(false);
@@ -15,7 +16,7 @@ const App = () => {
   };
   return (
     <div id="App" className={isLight ? "light" : undefined}>
-      <Perfil fotoPerfil={foto}> @JoaquimGuilherme </Perfil>
+      <Perfil fotoPerfil={isLight? FotoLight : FotoDark}> @JoaquimGuilherme </Perfil>
       <Switch troca={troca} isLight={isLight} />
       <ul>
         <Links link={"https://github.com/Joaquimtxt"}>Github</Links>
