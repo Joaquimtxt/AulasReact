@@ -1,13 +1,13 @@
-import styles from "./Links.module.css"
+import styles from "./Links.module.css";
 
-const Links = () => {
+const Links = ({ children, link }) => {
   return (
     <div>
-        <li>
-            <a href="https://google.com">google</a>
-        </li>
+      <li>
+        <a href={link} target="_blank">{children}</a>
+      </li>
     </div>
-  )
-}
+  );
+};
 
-export default Links
+export default Links;

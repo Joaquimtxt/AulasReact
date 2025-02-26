@@ -1,11 +1,13 @@
-import styles from './Rodape.module.css'
+import styles from "./Rodape.module.css";
 
-const Rodape = () => {
+const Rodape = ({ children }) => {
   return (
-   <footer>
-    <p>Feito com 🩵 por <a href="https://github.com/Joaquimtxt"></a>Joaquim</p>
-   </footer>
-  )
-}
+    <footer>
+      <p>
+        Feito com 🩵 por <a href="https://github.com/Joaquimtxt">{children}</a>
+      </p>
+    </footer>
+  );
+};
 
-export default Rodape
+export default Rodape;
