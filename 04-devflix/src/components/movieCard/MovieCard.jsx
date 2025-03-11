@@ -4,13 +4,13 @@ const MovieCard = (props) => {
   return (
     <div className={styles.movie}>
     <div>
-     <p>{props.year}</p>
+     <p>{props.Year}</p>
      </div> 
 
-     <img src={props.poster} alt=""></img> 
-     <h3>{props.type}</h3>
-     <h3>{props.title}</h3> 
-     <p>{props.description}</p>   
+     <img src={props.Poster} alt=""></img> 
+     <h3>{props.Type}</h3>
+     <h3>{props.Title}</h3> 
+     <p>{props.Description}</p>   
    </div>
   )
 }
