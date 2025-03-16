@@ -12,8 +12,7 @@ function App() {
             banner="https://placehold.co/1920x350"
             fotoPerfil="https://placehold.co/200x200"
           >
-            {" "}
-            @JoaquimGuilherme{" "}
+            {"@JoaquimGuilherme"}
           </Profile>
         </div>
         <div id="conteudo">
@@ -21,7 +20,6 @@ function App() {
             devNome="Seu Nome"
             descricao="Esta é a descrição sobre você."
           />
-
           <Portfolio />
         </div>
       </div>

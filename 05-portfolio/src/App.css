@@ -13,15 +13,19 @@
 
 #App {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #container {
   width: 100%;
-  /* max-width: 588px; */
-  margin: 0px auto 0px;
+  margin: 0 auto;
   padding: 0 24px;
-  padding-top: 56px;
+  flex: 1;
 }
+
 #conteudo {
   display: flex;
   flex-direction: column;
@@ -32,9 +36,12 @@
 
 @media only screen and (max-width: 700px) {
   #conteudo {
-    width: 80%;
+    width: 100%;
+    padding: 0px;
   }
   #container {
-    width: 80%;
+    width: 100%;
+    margin: 0;
+    padding: 0px;
   }
 }

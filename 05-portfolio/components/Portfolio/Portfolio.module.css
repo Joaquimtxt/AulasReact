@@ -16,9 +16,6 @@
   transition: color 0.3s;
 }
 
-.portfolio h2:hover {
-  color: #007bff;
-}
 
 .portfolioContent {
   margin-top: 20px;
@@ -74,15 +71,14 @@
 
 .card {
   width: 45%;
-  background-color: aquamarine;
 }
 
 @media only screen and (max-width: 700px) {
   /* Celulares maiores */
   .portfolio {
     margin: 0 20px;
-    width: 80%;
-    padding: 0;
+    width: 90%;
+    padding: 14px;
   }
   .portfolio h2 {
     width: 80%;
@@ -95,9 +91,5 @@
     justify-content: center;
     align-items: center;
     gap: 16px;
-  }
-
-  .card {
-    background-color: aquamarine;
   }
 }

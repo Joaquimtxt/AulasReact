@@ -1,19 +1,30 @@
 .profileContainer {
-    position: relative ;
-    width: 100%;
-  }
+  position: relative;
+  width: 100%;
+}
 
-  .bannerContainer {
-    overflow: hidden;
-  }
-  
-  .banner {
-    width: 100%;
-  }
+.bannerContainer {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.banner {
+  width: 100%;
+  height: 100vh; /* Ocupa a altura total da viewport */
+  object-fit: cover; /* Mantém a proporção da imagem */
+}
   
   .profile {
     position: relative;
+    left: -12%;
     display: inline-block;
+  }
+  .profile p {
+    text-align: center;
+    font-weight: 500;
+    line-height: 24px;
+    margin-top: 8px;
   }
   .profileImage {
     border: 1px solid rgba(146, 146, 146, 0.8);
@@ -23,12 +34,6 @@
     height: 200px; 
   }
   
-  .profile p {
-    text-align: center;
-    font-weight: 500;
-    line-height: 24px;
-    margin-top: 8px;
-  }
   @media only screen and (max-width: 700px) { /* Celulares menores */
     .profileContainer {
       text-align: center;
@@ -50,13 +55,14 @@
       text-align: start;
     }
     .bannerContainer {
-      width: 1920px;
+      width: 100%;
     }
     .banner {
       height: 350px; 
     }
     .profile {
       margin-top: -150px; 
+      left: auto;
       margin-left: 100px; 
     }
   }

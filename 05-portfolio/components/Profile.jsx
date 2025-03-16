@@ -3,7 +3,7 @@ import React from 'react'
 
 const Profile = ({ children, fotoPerfil, banner }) => {
     return (
-      <div className={styles.profileContainer}>
+      <header className={styles.profileContainer}>
         <div className={styles.bannerContainer}>
           <img src={banner} alt="Banner" className={styles.banner} />
         <div className={styles.profile}>
@@ -11,7 +11,7 @@ const Profile = ({ children, fotoPerfil, banner }) => {
           <p>{children}</p>
         </div>
         </div>
-      </div>
+      </header>
     );
   };
 
