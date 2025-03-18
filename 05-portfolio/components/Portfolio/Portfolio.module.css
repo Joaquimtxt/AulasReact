@@ -76,14 +76,14 @@
   /* Celulares maiores */
   .portfolio {
     margin: 0 20px;
-    width: 90%;
+    width: 80%;
     padding: 14px;
   }
   .portfolio h2 {
-    width: 80%;
+    width: 100%;
   }
   .row {
-    width: 80%;
+    width: 100%;
     margin-top: 24px;
     display: flex;
     flex-direction: column;

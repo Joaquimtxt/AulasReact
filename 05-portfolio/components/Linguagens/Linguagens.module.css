@@ -58,11 +58,11 @@
   @media only screen and (max-width: 700px) {
     /* Celulares maiores */
     .tecnologiasContainer {
-      width: 90%;
+      width: 80%;
       padding: 14px;
     }
     .tecnologiasHeader h2 {
-      width: 80%;
+      width: 100%;
     }
     .tecnologiasContent {
       margin-top: 24px;

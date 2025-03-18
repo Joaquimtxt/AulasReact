@@ -39,14 +39,14 @@
       text-align: center;
     }
     .bannerContainer {
-      width: 700px;
+      width: 100%;
     }
     .banner {
       height: 350px; 
     }
     .profile {
       margin-top: -100px; 
-      margin-left: -40px; 
+      margin-left: 25%; 
     }
   }
   
