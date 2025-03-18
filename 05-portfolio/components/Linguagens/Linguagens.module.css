@@ -24,7 +24,9 @@
     transition: color 0.3s;
   }
   
-  
+  .tecnologiasHeader h2:hover {
+    color: #007bff;
+  }
   
   .tecnologiasContent {
     width: 100%;
@@ -32,36 +34,41 @@
     font-size: 18px;
     color: #555;
     transition: max-height 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  .linguagensContainer{
-    display: inline-block;
-    background-color: #333;
-    stroke: white;
-    stroke-width: 15px;
-    border: 2px solid #fff;
   
-    & .linguagensItem{
-      padding: 8px 16px;
-      margin-right: 8px;
-    }
+  .linguagensContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #333;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    padding: 16px;
+    margin-top: 16px;
+  }
+  
+  .linguagensItem {
+    padding: 2px 2px;
+    margin: 8px;
   }
   
   @media only screen and (max-width: 700px) {
     /* Celulares maiores */
-    .aboutContainer {
+    .tecnologiasContainer {
       width: 90%;
       padding: 14px;
     }
-    .aboutHeader h2 {
+    .tecnologiasHeader h2 {
       width: 80%;
     }
-    .aboutContent {
+    .tecnologiasContent {
       margin-top: 24px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 16px;
     }
   }
-  
