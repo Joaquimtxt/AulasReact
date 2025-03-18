@@ -33,6 +33,18 @@
   color: #555;
   transition: max-height 0.3s ease-in-out;
 }
+.linguagensContainer{
+  display: inline-block;
+  background-color: #333;
+  stroke: white;
+  stroke-width: 15px;
+  border: 2px solid #fff;
+
+  & .linguagensItem{
+    padding: 8px 16px;
+    margin-right: 8px;
+  }
+}
 
 @media only screen and (max-width: 700px) {
   /* Celulares maiores */
