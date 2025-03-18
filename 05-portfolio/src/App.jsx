@@ -24,7 +24,7 @@ function App() {
             descricao="Esta é a descrição sobre você."
           />
           <Portfolio />
-          <Linguagens titulo="Tecnologias" />
+          <Linguagens titulo="Tecnologias utilizadas" />
         </div>
       </div>
     </div>
