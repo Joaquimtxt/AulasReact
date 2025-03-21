@@ -6,40 +6,94 @@
     margin-bottom: 100px;
   }
   
+.FooterItems{
+    margin-left: 30px;
+}
+
   .IconsItems {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-right: 30px;
+ 
   }
+
   
   .Icon {
     width: 43px; 
     height: 36px;
+    padding: 4px; 
+    margin: auto 10px;
     transition: transform 30ms ease;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative; 
-  }
-  
-  .Icon:hover {
+}
+
+.Icon ion-icon {
+    font-size: 60px; 
+}
+
+.Icon:hover {
     transform: scale(1.2); 
-  }
-  
-  .Icon::before {
+}
+
+.Icon::before {
     content: '';
     position: absolute;
     background-color: rgba(128, 128, 128, 0.3); 
     border-radius: 50%;
     transition: width 0.3s ease, height 0.3s ease, top 0.3s ease, left 0.3s ease;
     z-index: -1; 
-  }
-  
-  .Icon:hover::before {
-    width: 50px; 
-    height: 50px;
+}
+
+.Icon:hover::before {
+    width: 70px; 
+    height: 70px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+  
+  .devLink {
+    text-decoration: none;
+    position: relative; /* Necessário para o ::before funcionar corretamente */
+    transition: transform 30ms ease;
+  }
+  
+  .devLink:hover {
+    transform: scale(1.2); 
+  }
+  
+  .devLink::before {
+    content: '';
+    position: absolute;
+    background-color: rgba(128, 128, 128, 0.3);
+    border-radius: 50%;
+    transition: width 0.3s ease, height 0.3s ease, top 0.3s ease, left 0.3s ease;
+    z-index: -1; 
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .devLink:hover::before {
+    width: 70px;
+    height: 40px;
+  }
+  @media screen and (max-width: 700px) {
+    .Footer {
+      flex-direction: column;
+      gap: 20px;
+    }
+    .FooterItems {
+      margin-left: 0;
+    }
+    .IconsItems {
+      margin-right: 0;
+    }
   }
