@@ -1,4 +1,5 @@
 import About from "../components/About/about";
+import Footer from "../components/Footer/Footer";
 import Linguagens from "../components/Linguagens/Linguagens";
 import Portfolio from "../components/Portfolio/Portfolio";
 import Profile from "../components/Profile";
@@ -26,6 +27,10 @@ function App() {
           <Portfolio />
           <Linguagens titulo="Tecnologias utilizadas" />
         </div>
+        <hr />
+        <Footer devLink="https://github.com/joaquimtxt" devName="Joaquim"
+        Link1="https://linkedin.com" Logo1="linkedin" Link2="https://www.instagram.com/joaquimgsr/" Logo2="instagram"
+        />
       </div>
     </div>
   );
