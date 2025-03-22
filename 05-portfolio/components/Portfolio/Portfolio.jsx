@@ -1,12 +1,25 @@
 import styles from "./Portfolio.module.css";
 import ItemPort from "./ItemPort";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 const Portfolio = () => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const scrollRef = useRef(null);
 
   const toggleExpand = () => {
     setIsExpanded(!isExpanded);
+  };
+
+  const handleScroll1 = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: 400, behavior: 'smooth' });
+    }
+  };
+
+  const handleScroll2 = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: -400, behavior: 'smooth' });
+    }
   };
 
   return (
@@ -24,22 +37,50 @@ const Portfolio = () => {
 
       {isExpanded && (
         <div className={styles.row}>
-          <div className={styles.card}>
-            <ItemPort
-              link="https://github.com/Joaquimtxt"
-              imagem="https://placehold.co/300x300"
-              titulo="Titulo1"
-              descricao="É um projeto muito bla bla bla bla bla bla bla bla bla bla bla bla bla bla"
-            />
+          <ion-icon name="chevron-back-outline" size="large" className={styles.scrollIcon2} onClick={handleScroll2}></ion-icon>
+          <div className={styles.scroll} ref={scrollRef}>
+            <div className={styles.card}>
+              <ItemPort
+                link="https://github.com/Joaquimtxt"
+                imagem="https://placehold.co/300x300"
+                titulo="Titulo1"
+                descricao="É um projeto muito bla bla bla bla bla bla bla bla bla bla bla bla bla bla"
+              />
+            </div>
+            <div className={styles.card}>
+              <ItemPort
+                link="https://github.com/Joaquimtxt"
+                imagem="https://placehold.co/300x300"
+                titulo="Titulo1"
+                descricao="É um projeto muito bla bla bla bla bla bla bla bla bla bla bla bla bla bla"
+              />
+            </div>
+            <div className={styles.card}>
+              <ItemPort
+                link="https://github.com/Joaquimtxt"
+                imagem="https://placehold.co/300x300"
+                titulo="Titulo1"
+                descricao="É um projeto muito bla bla bla bla bla bla bla bla bla bla bla bla bla bla"
+              />
+            </div>
+            <div className={styles.card}>
+              <ItemPort
+                link="https://github.com/Joaquimtxt"
+                imagem="https://placehold.co/300x300"
+                titulo="Titulo1"
+                descricao="É um projeto muito bla bla bla bla bla bla bla bla bla bla bla bla bla bla"
+              />
+            </div>
+            <div className={styles.card}>
+              <ItemPort
+                link="https://github.com/Joaquimtxt"
+                imagem="https://placehold.co/300x300"
+                titulo="Titulo1"
+                descricao="É um projeto muito bla bla bla bla bla bla bla bla bla bla bla bla bla bla"
+              />
+            </div>
           </div>
-          <div className={styles.card}>
-            <ItemPort
-              link="https://github.com/Joaquimtxt"
-              imagem="https://placehold.co/300x300"
-              titulo="Titulo1"
-              descricao="É um projeto muito bla bla bla bla bla bla bla bla bla bla bla bla bla bla"
-            />
-          </div>
+          <ion-icon name="chevron-forward-outline" size="large" className={styles.scrollIcon1} onClick={handleScroll1}></ion-icon>
         </div>
       )}
     </div>
