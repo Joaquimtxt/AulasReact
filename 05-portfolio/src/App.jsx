@@ -3,6 +3,7 @@ import Footer from "../components/Footer/Footer";
 import Linguagens from "../components/Linguagens/Linguagens";
 import Portfolio from "../components/Portfolio/Portfolio";
 import Profile from "../components/Profile";
+import Photo from "./img/JOca.png";
 import "./App.css";
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
         <div>
           <Profile
             banner="https://placehold.co/1920x350"
-            fotoPerfil="https://placehold.co/200x200"
+            fotoPerfil={Photo}
           >
             {"@JoaquimGuilherme"}
           </Profile>
