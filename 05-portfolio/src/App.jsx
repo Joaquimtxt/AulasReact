@@ -1,4 +1,4 @@
-import About from "../components/About/about";
+import About from "../components/About/About";
 import Footer from "../components/Footer/Footer";
 import Linguagens from "../components/Linguagens/Linguagens";
 import Portfolio from "../components/Portfolio/Portfolio";
@@ -22,8 +22,8 @@ function App() {
         <div id="conteudo">
           <About
           titulo="Sobre Mim"
-            devNome="Oi meu nome é Seu Nome"
-            descricao="Esta é a descrição sobre você."
+            devNome="Oi meu nome é Joaquim Guilherme"
+            descricao="Tenho 17 anos."
           />
           <Portfolio />
           <Linguagens titulo="Tecnologias utilizadas" />
