@@ -1,4 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap");
+:root {
+  --bs-body-color: #212529 !important;
+}
+
+[data-bg-theme="dark"] {
+  --bs-body-color: #f8f9fa !important;
+}
+
+body {
+  color: var(--text-color);
+}
 
 * {
   margin: 0;
