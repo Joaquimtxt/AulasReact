@@ -37,7 +37,7 @@ function App() {
           <Linguagens titulo="Tecnologias utilizadas" />
         </div>
         <hr />
-        <Footer devLink="https://github.com/joaquimtxt" devName="Joaquim"
+        <Footer devLink="https://github.com/joaquimtxt" devName="Joaquim" AnoAtual={Data.getFullYear()}
         Link1="https://linkedin.com" Logo1="linkedin" Link2="https://www.instagram.com/joaquimgsr/" Logo2="instagram"
         />
       </div>
