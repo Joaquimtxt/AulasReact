@@ -4,6 +4,7 @@ import Linguagens from "../components/Linguagens/Linguagens";
 import Portfolio from "../components/Portfolio/Portfolio";
 import Profile from "../components/Profile";
 import Photo from "./img/JOca.png";
+import './scss/styles.scss';
 import "./App.css";
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
 }
   return (
     <div id="App">
-      <div id="container">
+      <div id="container ">
         <div>
           <Profile
             banner="https://placehold.co/1920x350"
@@ -37,9 +38,11 @@ function App() {
           <Linguagens titulo="Tecnologias utilizadas" />
         </div>
         <hr />
+        <div className="Footer">
         <Footer devLink="https://github.com/joaquimtxt" devName="Joaquim" AnoAtual={Data.getFullYear()}
         Link1="https://linkedin.com" Logo1="linkedin" Link2="https://www.instagram.com/joaquimgsr/" Logo2="instagram"
         />
+        </div>
       </div>
     </div>
   );
