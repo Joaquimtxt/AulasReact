@@ -5,8 +5,8 @@ const LinguagensItem = (props) => {
     <tr>
       <td>
         <div className={styles.linguagensContainer}>
-          {props.imagemLinks.map((link, index) => (
-            <img className={styles.linguagensItem} key={index} src={link} alt={`Linguagem ${index + 1}`} />
+          {props.imagemLinks.map((item, index) => (
+            <img className={styles.linguagensItem} key={index} src={item[0]} alt={item[1]} />
           ))}
         </div>
       </td>
