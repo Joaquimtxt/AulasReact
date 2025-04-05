@@ -23,6 +23,7 @@
   font-size: 18px;
   color: #555;
   transition: max-height 0.3s ease-in-out;
+ 
 }
 
 .row {
@@ -48,6 +49,7 @@
 .card {
   min-width: 300px;
   margin-right: 20px;
+  
 }
 
 .scrollIcon1, .scrollIcon2 {
@@ -76,6 +78,7 @@
 
 .image {
   width: 100%;
+  height:300px;
   border-radius: 8px;
   transition: transform 0.3s ease-in-out;
 }
@@ -95,6 +98,8 @@
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
   border-radius: 8px;
+  padding: 20px;
+  
 }
 
 .imageContainer:hover .image {
@@ -104,6 +109,11 @@
 .imageContainer:hover .overlay {
   opacity: 1;
   transform: scale(1.1);
+  
+}
+.Descricao{
+  font-size: 12px;
+  text-align: center;
 }
 
 @media only screen and (max-width: 700px) {

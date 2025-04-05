@@ -1,5 +1,6 @@
 import styles from "./Portfolio.module.css";
 import ItemPort from "./ItemPort";
+import Jaketa from "../../src/img/JaketaImg.png";
 import React, { useRef, useState } from "react";
 
 const Portfolio = () => {
@@ -41,10 +42,10 @@ const Portfolio = () => {
           <div className={styles.scroll} ref={scrollRef}>
             <div className={styles.card}>
               <ItemPort
-                link="https://github.com/Joaquimtxt"
-                imagem="https://placehold.co/300x300"
-                titulo="Titulo1"
-                descricao="É um projeto muito bla bla bla bla bla bla bla bla bla bla bla bla bla bla"
+                link="https://github.com/Joaquimtxt/ProjetoBackend"
+                imagem={Jaketa}
+                titulo="DbJaketa"
+                descricao="É um projeto MVC para a Jaketa, onde o objetivo principal é controlar o estoque de produtos, e gerenciar vendas e compras de produtos. Foi feito em C#, e possui algumas de suas validações feitas em Jquery. Front-end foi feito com HTML, Bootstrap e CSS. "
               />
             </div>
             <div className={styles.card}>

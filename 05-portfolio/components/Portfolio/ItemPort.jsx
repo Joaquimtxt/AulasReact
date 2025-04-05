@@ -15,7 +15,7 @@ const ItemPort = (props) => {
               />
               <div className={styles.overlay}>
                 <h3>{props.titulo}</h3>
-                <p>{props.descricao}</p>
+                <p className={styles.Descricao}>{props.descricao}</p>
               </div>
             </div>
           </a>
