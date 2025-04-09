@@ -1,0 +1,38 @@
+/* Linha do tabuleiro de xadrez */
+.chessBoard {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); /* Cria 8 colunas de tamanhos iguais */
+    width: 100%;
+    height: 50px; /* Altura fixa para a linha */
+    margin-top: 20px;
+    border: 2px solid #000; /* Borda preta ao redor do tabuleiro */
+    cursor: pointer;
+    position: relative; /* Define o contêiner como referência para posicionamento absoluto */
+  }
+
+/* Quadrados do tabuleiro */
+.chessSquare {
+  height: 100%;
+}
+
+/* Quadrados escuros */
+.chessSquare:nth-child(odd) {
+  background-color: #b58863; /* Marrom */
+}
+
+/* Quadrados claros */
+.chessSquare:nth-child(even) {
+  background-color: #f0d9b5; /* Bege */
+}
+
+/* Peça de xadrez */
+.chessPiece {
+    position: absolute; /* Posiciona a peça relativamente ao contêiner do tabuleiro */
+    top: 0; /* Alinha a peça ao topo do tabuleiro */
+    width: 12.5%; /* Cada quadrado ocupa 12.5% da largura */
+    height: 100%; /* A altura da peça é igual à altura do tabuleiro */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: left 0.2s ease; /* Suaviza o movimento da peça */
+  }

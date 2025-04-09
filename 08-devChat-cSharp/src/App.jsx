@@ -25,7 +25,7 @@ const troca = () => {
         {chatVisibility ? (
           <Chat socket={socket} />
         ) : (
-          <Join setSocket={setSocket} visibility={setChatVisibility} />
+          <Join setSocket={setSocket} visibility={setChatVisibility} isLight={isLight} />
         )}
       </div>
 </div>

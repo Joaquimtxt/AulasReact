@@ -1,8 +1,22 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
+import styles from "./Join.module.css";
 import * as signalR from "@microsoft/signalr";
 
-const Join = (props) => {
+const Join = ({props, isLight}) => {
   const usernameRef = useRef();
+  const [piecePosition, setPiecePosition] = useState(0); // Posição da peça (índice do quadrado)
+
+  const handleMouseMove = (e) => {
+    const board = e.currentTarget.getBoundingClientRect();
+    const squareSize = board.width / 8; // Dividimos a linha em 8 quadrados
+    const relativeX = e.clientX - board.left; // Posição do mouse relativa ao tabuleiro
+    const squareIndex = Math.floor(relativeX / squareSize); // Calcula o índice do quadrado
+    setPiecePosition(Math.max(0, Math.min(7, squareIndex))); // Garante que a peça fique entre 0 e 7
+  };
+
+  const chessPieceImage = isLight
+  ? "../assets/Chess_rlt60.png" 
+  : "../assets/Chess_rdt60.png";
 
   const handleSubmit = async () => {
     const username = usernameRef.current.value;
@@ -10,6 +24,7 @@ const Join = (props) => {
       alert("Por favor, digite um nome de usuário válido.");
       return;
     }
+
 
     // Criando a conexão com o servidor SignalR
     const connection = new signalR.HubConnectionBuilder()
@@ -60,6 +75,19 @@ const Join = (props) => {
         >
           Entrar
         </button>
+      </div>
+      <div className={styles.chessBoard} onMouseMove={handleMouseMove}>
+        {/* Renderiza os 8 quadrados */}
+        {Array.from({ length: 8 }).map((_, index) => (
+          <div key={index} className={styles.chessSquare}></div>
+        ))}
+
+        {/* Peça de xadrez */}
+        <div
+  className={styles.chessPiece}
+  style={{ left: `${piecePosition * 12.5}%`,
+  backgroundImage: `url(${chessPieceImage})` }} // Cada quadrado ocupa 12.5% da largura
+></div>
       </div>
     </div>
   );

@@ -17,7 +17,8 @@ const Chat = (props) => {
         typeof data === "object" &&
         typeof data.text === "string" &&
         typeof data.author === "string" &&
-        typeof data.authorId === "string"
+         typeof data.authorId === "string" &&
+      typeof data.time === "string"
       ) {
         setMessageList((current) => [...current, data]);
       } else {
@@ -33,10 +34,16 @@ const Chat = (props) => {
   const handleSubmit = async () => {
     const message = messageRef.current.value;
     if (!message.trim()) return;
+  
+    // Obtém a hora atual no momento do envio
+    const horaAtual = new Date();
+    const hora = horaAtual.getHours().toString().padStart(2, "0");
+    const minuto = horaAtual.getMinutes().toString().padStart(2, "0");
+    const horario = `${hora}:${minuto}`;
 
     try {
-      // Envia a mensagem para o servidor SignalR
-      await props.socket.invoke("SendMessage", message);
+      // Envia a mensagem para o servidor SignalR com o horário
+      await props.socket.invoke("SendMessage", message, horario);
       messageRef.current.value = "";
       messageRef.current.focus();
     } catch (error) {
@@ -62,11 +69,14 @@ const Chat = (props) => {
             } rounded-3 p-2 text-dark text-break`}
             key={index}
           >
-            <div id="message-author">
-              <p className="fw-bold">{message.author}</p>
-            </div>
-            <div id="message-text">{message.text}</div>
+           <div id="message-author">
+            <p className="fw-bold">{message.author}</p>
           </div>
+          <div id="message-text">{message.text}</div>
+          <div id="message-time" className="text-muted small text-end">
+            {message.time}
+          </div>
+        </div>
         ))}
         <div ref={bottomRef} />
       </div>
