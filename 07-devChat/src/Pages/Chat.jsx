@@ -8,27 +8,59 @@ const Chat = (props) => {
 
   useEffect(() => {
     props.socket.on("receive_message", (data) => {
-      setMessageList((current) => [...current, data]);
+      // Valida se a mensagem recebida é um objeto válido
+      if (
+        data &&
+        typeof data === "object" &&
+        typeof data.text === "string" &&
+        typeof data.time === "string"
+      ) {
+        setMessageList((current) => [...current, data]);
+      } else if (
+        data &&
+        typeof data === "object" &&
+        typeof data.text === "object" &&
+        typeof data.text.text === "string" &&
+        typeof data.text.time === "string"
+      ) {
+        // Corrige a estrutura da mensagem se `data.text` for um objeto
+        const correctedMessage = {
+          text: data.text.text,
+          time: data.text.time,
+          authorId: data.text.authorId || data.authorId,
+          author: data.text.author || data.author,
+        };
+        setMessageList((current) => [...current, correctedMessage]);
+      } else {
+        console.error("Mensagem inválida recebida:", data);
+      }
     });
+  
     return () => props.socket.off("receive_message");
   }, [props.socket]);
-
-  useEffect(() => {
-  bottomRef.current.scrollIntoView({
-      behavior: "smooth",
-      block: "end",
-    });
-  }, [messageList]);
-
+  
   const handleSubmit = () => {
     const message = messageRef.current.value;
     if (!message.trim()) return;
-
-    props.socket.emit("message", message)
-
+  
+    // Obtém a hora atual no momento do envio
+    const horaAtual = new Date();
+    const hora = horaAtual.getHours().toString().padStart(2, "0");
+    const minuto = horaAtual.getMinutes().toString().padStart(2, "0");
+    const horario = `${hora}:${minuto}`;
+  
+    // Envia a mensagem com a estrutura correta
+    props.socket.emit("message", {
+      text: message, // Texto simples
+      time: horario, // Hora formatada
+      authorId: props.socket.id,
+      author: "Seu Nome", // Substitua por um valor dinâmico, se necessário
+    });
+  
     messageRef.current.value = "";
     messageRef.current.focus();
   };
+
 
   return (
     <div
@@ -44,11 +76,14 @@ const Chat = (props) => {
         className={`${message.authorId === props.socket.id? "align-self-end ms-5 bg-success-subtle" : "align-self-start me-5 bg-warning-subtle"}  rounded-3 p-2 text-dark text-break`}
             key={index}
           >
-            <div className="fw-bold" id="message-author">
-              {message.author}
-            </div>
-            <div id="message-text">{message.text}</div>
+           <div id="message-author">
+            <p className="fw-bold">{message.author}</p>
           </div>
+          <div id="message-text">{message.text}</div>
+          <div id="message-time" className="text-muted small text-end">
+            {message.time}
+          </div>
+        </div>
         ))}
         <div ref={bottomRef}/>{/**/}
         </div>
