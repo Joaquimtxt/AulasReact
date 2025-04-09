@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import styles from "./Chat.module.css";
 
 const Chat = (props) => {
   const [messageList, setMessageList] = useState([]);
@@ -32,8 +33,7 @@ const Chat = (props) => {
   return (
     <div
       id="chat-container"
-      style={{ width: "400px", height: "600px" }}
-      className="bg-secondary rounded-4 p-3 d-flex flex-column m-4"
+      className={`bg-secondary rounded-4 p-3 d-flex flex-column mt-2 ${styles.chatContainer}`}
     >
       <div
         id="chat-body"

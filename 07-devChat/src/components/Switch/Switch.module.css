@@ -1,0 +1,57 @@
+#switch {
+    position: relative;
+    width: 64px;
+    height: 32px; 
+    margin: 0 auto;
+  }
+  
+  #switch button {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 0;
+    background: #3eebb1 no-repeat center; 
+    position: absolute;
+    z-index: 1;
+    top: 40%;
+    transform: translateY(-50%);
+    animation: slide-out 0.2s;
+  }
+  
+  #switch button:hover {
+    outline: 8px solid rgba(0, 123, 255, 0.5); 
+  }
+  
+  #switch span {
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: #6c757d; 
+    border: 1px solid #ced4da; 
+    border-radius: 999px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+  
+  .light #switch button {
+    animation: slide-in 0.2s forwards;
+  }
+  
+  /* Animações */
+  @keyframes slide-in {
+    from {
+      left: 0;
+    }
+    to {
+      left: 32px;
+    }
+  }
+  
+  @keyframes slide-out {
+    from {
+      left: 32px;
+    }
+    to {
+      left: 0;
+    }
+  }
