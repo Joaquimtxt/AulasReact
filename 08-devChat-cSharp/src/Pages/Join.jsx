@@ -1,6 +1,8 @@
 import React, { useRef, useState } from "react";
 import styles from "./Join.module.css";
 import * as signalR from "@microsoft/signalr";
+import lightPiece from "../assets/Chess_rlt60.png";
+import darkPiece from "../assets/Chess_rdt60.png";
 
 const Join = ({props, isLight}) => {
   const usernameRef = useRef();
@@ -15,8 +17,8 @@ const Join = ({props, isLight}) => {
   };
 
   const chessPieceImage = isLight
-  ? "../assets/Chess_rlt60.png" 
-  : "../assets/Chess_rdt60.png";
+  ? lightPiece
+  : darkPiece;
 
   const handleSubmit = async () => {
     const username = usernameRef.current.value;
@@ -82,11 +84,12 @@ const Join = ({props, isLight}) => {
           <div key={index} className={styles.chessSquare}></div>
         ))}
 
-        {/* Peça de xadrez */}
-        <div
-  className={styles.chessPiece}
-  style={{ left: `${piecePosition * 12.5}%`,
-  backgroundImage: `url(${chessPieceImage})` }} // Cada quadrado ocupa 12.5% da largura
+<div
+          className={styles.chessPiece}
+          style={{
+            left: `${piecePosition * 12.5}%`, // Cada quadrado ocupa 12.5% da largura
+            backgroundImage: `url(${chessPieceImage})`, // Define a imagem dinamicamente
+          }}
 ></div>
       </div>
     </div>
