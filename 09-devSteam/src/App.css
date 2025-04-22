@@ -20,3 +20,14 @@ body{
 .promoCard:hover{
   transform: scale(1.03);
 }
+
+.desconto {
+  background-color: #4c6b22;
+  color: #beeb14;
+}
+.corValor{
+  color: #beeb14;
+}
+#addCarrinho:hover{
+  background-color: #547625;
+}

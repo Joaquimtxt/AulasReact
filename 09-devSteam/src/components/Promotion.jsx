@@ -5,9 +5,12 @@ const Promotion = () => {
   return (
     <div id='promotion'>
         <h2>Promoções</h2>
-        <div id='itensPromo'></div>
+        <div id='itensPromo' className='d-flex flex-wrap gap-4 justify-content-around'>
         {/*Inserir os cards de promoção     */}
         <Promocard/>
+        <Promocard/>
+        <Promocard/>
+        </div>
     </div>
   )
 }

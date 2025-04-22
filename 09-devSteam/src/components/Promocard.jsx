@@ -2,21 +2,33 @@ import React from 'react'
 
 const Promocard = (props) => {
   return (
-    <div className='promoCard card border-0 overflow-hidden'>
-        <img className='card-img-top object-fit-cover' src="https://placehold.co/200x200" alt="" />
-        <div className='card-body'>
-            <h5 className='card-title text-uppercase fw-bold'>Título</h5>
-            <div className='row'>
-                <span className='col-4 text-center bg-success text-success-emphasis fw-bold'>-50%</span>
-                <div className='col card-text bg-dark'>
-            <p className='m-0 p-0 text-end text-light'>R$ Preço</p>
-            <p className='m-0 p-0 text-end text-light'>R$ Preço</p>
-            </div>
-            </div>
-            <button className='btn btn-success w-100'>
-                <i className='bi bi-cart-plus me-2'></i>
-            </button>
+    <div className="promoCard card border-0 overflow-hidden">
+      <img
+        className="card-img-top object-fit-cover"
+        src="https://placehold.co/250x300"
+        height={300} 
+        alt="Titulo do jogo"
+      />
+      <div className="card-body d-flex flex-column gap-2">
+        <h5 className="card-title text-uppercase fw-bold text-light">Titulo</h5>
+        <div className="m-0 row h-100 align-items-center justify-content-center">
+          <span className="col-4 h-100 fw-bold h5 m-0 py-3 text-center desconto">
+            -50%
+          </span>
+          <div className="col h-100 card-text bg-dark">
+            <p className="m-0 p-0 text-end text-secondary text-decoration-line-through small">
+              <small>R$199,99</small>
+            </p>
+            <p className="m-0 p-0 fs-4 text-end fw-bolder corValor">
+              R$99,99
+            </p>
+          </div>
         </div>
+        <button id='addCarrinho' className="btn btn-success w-100 border-0">
+          <i className="bi bi-cart-plus me-2"></i>
+          Adicionar ao carrinho
+        </button>
+      </div>
     </div>
   )
 }
