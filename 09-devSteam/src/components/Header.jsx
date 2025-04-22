@@ -9,10 +9,10 @@ const Header = () => {
             <span className='navbar-brand fw-bold fs-3'>DevSteam</span>
         </div>
 
-        <input type="text" className='w-100 d-none d-md-block border-0 rounded-1 buscar px-4 my-2' placeholder='Buscar...' />
+        <input type="text" className='w-100 d-none d-md-block border-0 rounded-1 buscar px-4 my-2 ms-5' placeholder='Buscar...' />
         </div>
         <div id="carrinho" role='button'>
-            <i className='bi bi-cart4 text-bg-light fs-2'></i>
+            <i className='bi bi-cart4 text-light fs-2'></i>
         </div>
     </header>
   )
