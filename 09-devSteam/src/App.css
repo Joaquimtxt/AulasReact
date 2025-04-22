@@ -11,3 +11,12 @@ body{
   background-color: #2a475e;
   color: #d7d7d7;
 }
+.promoCard{
+  width: 280px;
+  transition: transform 0.2s;
+  background: linear-gradient(to top, #19587b, #2b87ae);
+}
+
+.promoCard:hover{
+  transform: scale(1.03);
+}
