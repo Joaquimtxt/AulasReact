@@ -75,7 +75,7 @@ const Promotion = () => {
     return array.sort(() => Math.random() - 0.5);
   };
 
-  // Filtra jogos com desconto > 0, embaralha e pega os primeiros 3
+  // Filtra jogos com desconto > 0, embaralha e pega os primeiros 3 do array embaralhado
   const jogosFiltrados = embaralharArray(games.filter((jogo) => jogo.desconto > 0)).slice(0, 3);
 
   return (
