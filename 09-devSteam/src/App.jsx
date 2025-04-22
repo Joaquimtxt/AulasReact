@@ -1,6 +1,7 @@
 import "./App.css"
 
 import Header from "./components/Header"
+import Promotion from "./components/Promotion"
 
 function App() {
 
@@ -8,6 +9,7 @@ function App() {
   return (
     <>
   <Header />
+  <Promotion/>
     </>
   )
 }
