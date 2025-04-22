@@ -1,4 +1,5 @@
 import React from 'react'
+import Promocard from './Promocard'
 
 const Promotion = () => {
   return (
@@ -6,6 +7,7 @@ const Promotion = () => {
         <h2>Promoções</h2>
         <div id='itensPromo'></div>
         {/*Inserir os cards de promoção     */}
+        <Promocard/>
     </div>
   )
 }
