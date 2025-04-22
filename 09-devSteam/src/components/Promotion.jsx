@@ -35,7 +35,48 @@ const Promotion = () => {
       imagem:
         "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/header.jpg",
     },
+    {
+        id: 1,
+        titulo: "Counter-Strike 2",
+        preco: 0.0,
+        desconto: 0,
+        imagem:
+          "https://cdn.cloudflare.steamstatic.com/steam/apps/730/header.jpg",
+      },
+      {
+        id: 2,
+        titulo: "Cyberpunk 2077",
+        preco: 129.99,
+        desconto: 20, // 20% off
+        imagem:
+          "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/header.jpg",
+      },
+      {
+        id: 3,
+        titulo: "Elden Ring",
+        preco: 249.9,
+        desconto: 35, // 35% off
+        imagem:
+          "https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/header.jpg",
+      },
+      {
+        id: 4,
+        titulo: "Red Dead Redemption 2",
+        preco: 199.9,
+        desconto: 40, // 40% off
+        imagem:
+          "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/header.jpg",
+      },
+    
   ];
+
+  // Função para embaralhar os jogos
+  const embaralharArray = (array) => {
+    return array.sort(() => Math.random() - 0.5);
+  };
+
+  // Filtra jogos com desconto > 0, embaralha e pega os primeiros 3
+  const jogosFiltrados = embaralharArray(games.filter((jogo) => jogo.desconto > 0)).slice(0, 3);
 
   return (
     <div id="promotion" className="container w-75 my-5">
@@ -44,12 +85,12 @@ const Promotion = () => {
         id="itensPromo"
         className="d-flex flex-wrap gap-4 justify-content-between"
       >
-        {/* mapeando um array com react */}
-        {games.map((jogo) => (
+
+        {jogosFiltrados.map((jogo) => (
           <PromoCard
             key={jogo.id}
             titulo={jogo.titulo}
-            preco={jogo.preco.toFixed(2)}
+            preco={jogo.preco}
             desconto={jogo.desconto}
             imagem={jogo.imagem}
           />
