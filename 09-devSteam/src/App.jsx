@@ -33,12 +33,20 @@ function App() {
       itemAnterior.filter((item) => item.id !== produto.id)
     );
   };
+  
+  const handleUpdateCarrinho = (produto, novaQuantidade) =>{
+    setCarrinhoItem((itemAnterior) =>
+    itemAnterior.map((item) => item.id === produto.id
+  ?{...item, quantidade: novaQuantidade> 0? novaQuantidade : 1} : item
+)
+  )
+  }
 
   return (
     <>
     <Header contadorJogos={carrinhoItem.length} />
     <Promotion onAddCarrinho={handleAddCarrinho}/>
-    <CarrinhoOffCanva onRemoveCarrinho={handleRemoveCarrinho} carrinhoItem={carrinhoItem} />
+    <CarrinhoOffCanva onRemoveCarrinho={handleRemoveCarrinho} carrinhoItem={carrinhoItem} onUpdateCarrinho={handleUpdateCarrinho} />
     </>
   )
 }

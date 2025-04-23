@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PromoCard from "./Promocard";
 
 const Promotion = (props) => {
-  const games = [
+  const [games, setGames] = useState( [
     {
       id: 1,
       titulo: "Counter-Strike 2",
@@ -68,8 +68,13 @@ const Promotion = (props) => {
           "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/header.jpg",
       },
     
-  ];
+  ]);
 
+
+  useEffect(() => {
+const embaralhar = [...games].sort(() => Math.random() - 0.5); // Embaralha os jogos
+setGames(embaralhar); // Atualiza o estado com os jogos embaralhados
+  }, []); // Executa apenas uma vez quando o componente é montado 
   
 
   return (
@@ -82,9 +87,7 @@ const Promotion = (props) => {
         {/* mapeando um array com react */}
         {games
           .filter((jogo) => jogo.desconto > 0)
-          //.sort((a, b) => b.desconto - a.desconto) //ordenação por desconto decrescente
-          .sort(() => Math.random() - 0.5) //ordenação aleatória
-          .slice(0, 3)
+          .slice(0, 3) //ordenação aleatória
           .map((jogo) => (
             <PromoCard
               key={jogo.id}
