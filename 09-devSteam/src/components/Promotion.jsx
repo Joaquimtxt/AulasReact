@@ -92,6 +92,7 @@ const Promotion = (props) => {
               preco={jogo.preco.toFixed(2)}
               desconto={jogo.desconto}
               imagem={jogo.imagem}
+              onAddCarrinho={()=>props.onAddCarrinho()} // Passando a função para o componente filho
             />
           ))}
       </div>

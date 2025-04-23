@@ -30,6 +30,7 @@ const Promocard = (props) => {
       <button
         id="addCarrinho"
         className="btn btn-success desconto text-light w-100 border-0"
+        onClick={props.onAddCarrinho} // Passando a função para o componente pai
       >
         <i className="bi bi-cart-plus me-2"></i>
         Adicionar ao carrinho
